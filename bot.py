@@ -2838,6 +2838,13 @@ async def handle_undress_callback(update: Update, context: ContextTypes.DEFAULT_
                 parse_mode="Markdown"
             )
 
+    elif action == "customize":
+        await query.edit_message_text(
+            "⚙️ *Personalizar Processamento*\n\nEscolha os parâmetros desejados:",
+            parse_mode="Markdown",
+            reply_markup=customize_keyboard(id_gen),
+        )
+
 # ─── Callbacks de Personalização ───────────────────────────────────────────
 
 async def handle_custom_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
